@@ -68,7 +68,7 @@ public class ArrayDeque<T> {
     }
     public void resize(int size){
         T[] a = (T []) new Object[size];
-        System.arraycopy(items,0,a,0,size);
+        System.arraycopy(items,0,a,0,items.length);
         items = a;
     }
     public boolean too_many_free(){
