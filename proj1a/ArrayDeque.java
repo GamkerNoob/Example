@@ -29,10 +29,10 @@ public class ArrayDeque<T> {
         }
         return false;
     }
-    public T getLast() {
+    private T getLast() {
         return items[size - 1];
     }
-    public T getFIrst(){
+    private T getFIrst(){
         return items[0];
     }
     public T get(int index) {
@@ -66,12 +66,12 @@ public class ArrayDeque<T> {
         }
         return x;
     }
-    public void resize(int size){
-        T[] a = (T []) new Object[size];
-        System.arraycopy(items,0,a,0,items.length);
+    private void resize(int size0){
+        T[] a = (T []) new Object[size0];
+        System.arraycopy(items,0,a,0,this.size);
         items = a;
     }
-    public boolean too_many_free(){
+    private boolean too_many_free(){
         double x = size / items.length;
         if(x < 0.25){
             return true;
