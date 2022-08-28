@@ -10,6 +10,9 @@ public class ArrayDeque<T> {
         if(size == items.length){
             resize(size * RFACTOR);
         }
+        T[] a = (T []) new Object[items.length];
+        System.arraycopy(items,0,a,1,size);
+        items = a;
         items[0] = item;
         size += 1;
     }
